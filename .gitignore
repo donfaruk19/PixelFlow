@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.env
+*.bak
+# Images
+*.png
+*.jpg
+*.jpeg
+*.bmp
+# Optionally ignore output images or specific test images
+encrypted_*
+decrypted_*
