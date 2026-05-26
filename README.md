@@ -1,37 +1,40 @@
-# PixelFlow: CLI Image Encryption Tool
+# 🎨 PixelFlow: CLI Image Encryption Tool
 
 ## Overview
-PixelFlow is a command-line interface (CLI) tool designed for image encryption and decryption through pixel manipulation. Developed as a task for Prodigy Infotech, this tool provides a secure and intuitive way to obscure images using various cryptographic methods applied directly to pixel data. It features a self-contained environment setup, dynamic file Browse, multiple encryption algorithms, and robust user interaction.
+PixelFlow is a command-line interface (CLI) tool designed for image encryption and decryption through pixel manipulation. Developed as a task for Prodigy Infotech, this tool provides a secure and intuitive way to protect your images using advanced encryption techniques.
 
 ## Features
-* **Self-Setup Environment:** Automatically creates a Python virtual environment and installs all necessary dependencies (`Pillow`, `numpy`, `colorama`) upon first run, ensuring a smooth setup process.
-* **Interactive CLI:** A user-friendly command-line interface with clear prompts, color-coded output, and options to quit (`q`) or go back (`b`) at almost any step.
-* **Dynamic File Selection:** Allows users to browse directories and select image files directly from the CLI, simplifying input and key image selection.
-* **Multiple Encryption Methods:**
+* **🔧 Self-Setup Environment:** Automatically creates a Python virtual environment and installs all necessary dependencies (`Pillow`, `numpy`, `colorama`) upon first run, ensuring a smooth setup process.
+* **💻 Interactive CLI:** A user-friendly command-line interface with clear prompts, color-coded output, and options to quit (`q`) or go back (`b`) at almost any step.
+* **📁 Dynamic File Selection:** Allows users to browse directories and select image files directly from the CLI, simplifying input and key image selection.
+* **🔐 Multiple Encryption Methods:**
     * **Shift Cipher:** A simple pixel-shifting technique where a numerical key (1-255) is added to or subtracted from each RGB color component.
     * **XOR Cipher:** Performs a bitwise XOR operation on pixel values. Supports both a numerical key (1-255) or another image as a key.
     * **Shuffle Cipher:** Rearranges image blocks based on a numerical seed (1-255). Requires image dimensions to be perfectly divisible by the predefined block size (16x16 pixels).
-* **Flexible Key Management:**
+* **🔑 Flexible Key Management:**
     * Direct numerical input for keys (1-255).
     * Generate numerical keys from a user-provided passphrase using SHA-256 hashing.
     * Option to use a separate image as a key for XOR encryption.
-* **Output File Handling:** Prompts for output file name, includes an overwrite warning, and automatically saves in common image formats (PNG, JPG, BMP). Defaults to PNG if an unknown format is specified.
-* **Open Output File:** After successful processing, offers to open the resulting image directly in the system's default image viewer.
-* **Comprehensive Help Guide:** An integrated help section provides detailed explanations of all features, encryption methods, key types, and usage instructions.
-* **Robust Error Handling:** Provides informative messages for file not found errors, invalid inputs, and method-specific requirements (e.g., image dimensions for shuffle).
+* **💾 Output File Handling:** Prompts for output file name, includes an overwrite warning, and automatically saves in common image formats (PNG, JPG, BMP). Defaults to PNG if an unknown format is specified.
+* **👁️ Open Output File:** After successful processing, offers to open the resulting image directly in the system's default image viewer.
+* **📖 Comprehensive Help Guide:** An integrated help section provides detailed explanations of all features, encryption methods, key types, and usage instructions.
+* **⚠️ Robust Error Handling:** Provides informative messages for file not found errors, invalid inputs, and method-specific requirements (e.g., image dimensions for shuffle).
 
 ## Installation & Setup
-This tool is designed to be self-setting up. Follow these steps:
+PixelFlow is designed to be self-setting up. Follow these steps:
 
-1.  **Download the Script:**
-    Download the `image_encryption_tool.py` file (or whatever you name your Python script) to your local machine.
+1.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/donfaruk19/PixelFlow.git
+    cd PixelFlow
+    ```
 
 2.  **Run the Script:**
-    Open your terminal or command prompt, navigate to the directory where you saved the script, and run it using Python:
+    Open your terminal or command prompt and run:
     ```bash
-    python image_encryption_tool.py
+    python pixelflow.py
     ```
-    The script will automatically check for a virtual environment (`.venv`) and required dependencies. If not found, it will create the virtual environment and install `Pillow`, `numpy`, and `colorama`. Once setup is complete, it will relaunch itself within the virtual environment.
+    The script will automatically check for a virtual environment (`.venv`) and required dependencies. If not found, it will create the virtual environment and install `Pillow`, `numpy`, and `colorama`.
 
 ## How to Use
 
@@ -83,14 +86,49 @@ At most prompts, you can enter:
 * `q` or `quit`: To exit the program entirely.
 * `b` or `back`: To return to the previous step in the process.
 
-## Dependencies
-The script will automatically install these packages if they are not found:
-* `Pillow` (PIL Fork)
-* `numpy`
-* `colorama`
+## Requirements
+- Python 3.7 or higher
+- The script will automatically install these packages if they are not found:
+  * `Pillow` (PIL Fork) - Image processing
+  * `numpy` - Numerical operations
+  * `colorama` - Colored terminal output
+
+## Project Structure
+```
+PixelFlow/
+├── pixelflow.py          # Main application script
+├── README.md             # This file
+├── LICENSE               # GNU General Public License
+└── requirements.txt      # Python dependencies (optional)
+```
+
+## Encryption Methods Explained
+
+### 1. Shift Cipher
+- **How it works:** Adds or subtracts a numerical key from each RGB value of every pixel.
+- **Best for:** Quick, simple encryption.
+- **Key range:** 1-255
+
+### 2. XOR Cipher
+- **How it works:** Performs bitwise XOR operation on pixel values.
+- **Best for:** Moderate security with good performance.
+- **Key options:** Numerical key or image-based key
+- **Key range:** 1-255 (for numerical key)
+
+### 3. Shuffle Cipher
+- **How it works:** Rearranges image blocks (16x16 pixels) based on a seed value.
+- **Best for:** Visual scrambling of image content.
+- **Requirements:** Image dimensions must be divisible by 16
+- **Key range:** 1-255
+
+## License
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
 
 ## Author
 **Abdullahi Umar Faruk**
 
-## License
-This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the LICENSE file for details.
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Support
+If you encounter any issues or have questions, please open an issue on the [GitHub repository](https://github.com/donfaruk19/PixelFlow/issues).
