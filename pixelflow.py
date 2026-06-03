@@ -401,7 +401,7 @@ def display_help():
     print("    This is a simple bit-flipping cipher. Applying XOR with the same key twice reverses the operation.")
     print("    Supports two key types:")
     print("      - " + Fore.CYAN + "Numerical Key:" + Fore.RESET + " A single number (1-255) applied to all pixels.")
-    print("      - " + Fore.CYAN + "Image Key:" + Fore.RESET + " Uses another image as the key. Each pixel of the input image is XORed with the corresponding pixel of the key image. The key image will[...]
+    print("      - " + Fore.CYAN + "Image Key:" + Fore.RESET + " Uses another image as the key. Each pixel of the input image is XORed with the corresponding pixel of the key image. The key image must be the same size as the input image or will be resized.")
     print("  - " + Fore.CYAN + "Shuffle Cipher:" + Fore.RESET + " Rearranges image blocks to scramble the image visually.")
     print(f"    Uses a numerical key (1-255) as a seed for random permutation of {SHUFFLE_BLOCK_SIZE}x{SHUFFLE_BLOCK_SIZE} pixel blocks.")
     print("    IMPORTANT: Image dimensions (width and height) must be perfectly divisible by the block size.")
