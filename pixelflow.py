@@ -66,16 +66,17 @@ def setup_environment():
     if not all_packages_installed:
         print(f"Installing required packages: {', '.join(REQUIRED_PACKAGES)}...")
         try:
-            install_command = [pip_executable, "install", "--upgrade", "pip"]
+            # Use python -m pip for better cross-platform compatibility (especially on Windows)
+            install_command = [python_executable, "-m", "pip", "install", "--upgrade", "pip"]
             subprocess.check_call(install_command)
             print("Pip upgraded successfully.")
             
-            install_command = [pip_executable, "install"] + REQUIRED_PACKAGES
+            install_command = [python_executable, "-m", "pip", "install"] + REQUIRED_PACKAGES
             subprocess.check_call(install_command)
             print("All required packages installed successfully.")
         except subprocess.CalledProcessError as e:
             print(f"Error installing packages: {e}")
-            print(f"Please try installing manually within the venv: '{pip_executable} install {' '.join(REQUIRED_PACKAGES)}'")
+            print(f"Please try installing manually within the venv: '{python_executable} -m pip install {' '.join(REQUIRED_PACKAGES)}'")
             sys.exit(1)
         except Exception as e:
             print(f"An unexpected error occurred while installing packages: {e}")
@@ -400,7 +401,7 @@ def display_help():
     print("    This is a simple bit-flipping cipher. Applying XOR with the same key twice reverses the operation.")
     print("    Supports two key types:")
     print("      - " + Fore.CYAN + "Numerical Key:" + Fore.RESET + " A single number (1-255) applied to all pixels.")
-    print("      - " + Fore.CYAN + "Image Key:" + Fore.RESET + " Uses another image as the key. Each pixel of the input image is XORed with the corresponding pixel of the key image. The key image will be resized to match if needed.")
+    print("      - " + Fore.CYAN + "Image Key:" + Fore.RESET + " Uses another image as the key. Each pixel of the input image is XORed with the corresponding pixel of the key image. The key image will[...]
     print("  - " + Fore.CYAN + "Shuffle Cipher:" + Fore.RESET + " Rearranges image blocks to scramble the image visually.")
     print(f"    Uses a numerical key (1-255) as a seed for random permutation of {SHUFFLE_BLOCK_SIZE}x{SHUFFLE_BLOCK_SIZE} pixel blocks.")
     print("    IMPORTANT: Image dimensions (width and height) must be perfectly divisible by the block size.")
