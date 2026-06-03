@@ -132,15 +132,15 @@ print(BORDER_COLOR + "║" + center_header_text(TITLE_COLOR + "█  █ █ █�
 print(BORDER_COLOR + "║" + center_header_text(TITLE_COLOR + "█  ███ █ █ █ █ ███", HEADER_WIDTH, None) + BORDER_COLOR + "║" + Style.RESET_ALL) # IMAGE bottom part
 # --- END MODIFIED ASCII ART TITLE ---
 print(BORDER_COLOR + "║" + center_header_text("", HEADER_WIDTH) + "║" + Style.RESET_ALL)
-print(BORDER_COLOR + "║" + center_header_text(SUB_TITLE_COLOR + "E N C R Y P T I O N   T O O L", HEADER_WIDTH, None) + BORDER_COLOR + "║" + Style.RESET_ALL)
+print(BORDER_COLOR + "║" + center_header_text(SUB_TITLE_COLOR + "I M A G E   E N C R Y P T I O N   T O O L", HEADER_WIDTH, None) + BORDER_COLOR + "║" + Style.RESET_ALL)
 print(BORDER_COLOR + "║" + center_header_text("", HEADER_WIDTH) + "║" + Style.RESET_ALL)
-print(BORDER_COLOR + "║" + center_header_text(AUTHOR_COLOR + "By Abdullahi Umar Faruk", HEADER_WIDTH, None) + BORDER_COLOR + "║" + Style.RESET_ALL)
+print(BORDER_COLOR + "║" + center_header_text(AUTHOR_COLOR + "By Abdullahi Umar Faruk (Donfaruk19)", HEADER_WIDTH, None) + BORDER_COLOR + "║" + Style.RESET_ALL)
 print(BORDER_COLOR + "║" + center_header_text("", HEADER_WIDTH) + "║" + Style.RESET_ALL)
 print(BORDER_COLOR + "╚" + "═" * HEADER_WIDTH + "╝" + Style.RESET_ALL)
 
 print(Fore.YELLOW + "Task: Pixel Manipulation for Image Encryption")
-print(Fore.RED + "Copyright © 2025 Prodigy Infotech. All rights reserved.")
-print("WARNING: Unauthorized use or distribution is prohibited.")
+print(Fore.RED + "Copyright © 2025 All rights reserved.")
+print("WARNING: Unethical use or distribution is prohibited.")
 print(Fore.RESET + "═" * (HEADER_WIDTH + 2) + "\n")
 
 # --- Helper function for consistent user input and flow control ---
